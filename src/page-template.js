@@ -1,5 +1,3 @@
-module.exports = generatePage;
-
 function generatePage(userName, githubName) {
     // Template literal.
     return `
@@ -18,3 +16,5 @@ function generatePage(userName, githubName) {
     </html>
     `;
 }
+
+module.exports = generatePage;
