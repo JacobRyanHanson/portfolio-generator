@@ -6,7 +6,9 @@ const inquirer = require("inquirer");
 
 const {writeFile, copyFile} = require('./src/generate-site.js');
 const generatePage = require("./src/page-template.js");
-
+// Prompts the user with questions about themself, then generates an html page including an about and project section,
+// then the html files is written to dist, then style.css is copied to dist, then the response object is logged and 
+// completion messages displayed.
 promptUser().then(promptProject).then(function (portfolioData) {
     return generatePage(portfolioData);
 }).then(function (pageHTML) {
@@ -19,7 +21,7 @@ promptUser().then(promptProject).then(function (portfolioData) {
 }).catch(function (error) {
     console.log(error);
 });
-
+// Asks the user questions about themself.
 function promptUser() {
     return inquirer.prompt([{
             type: "input",
@@ -69,7 +71,7 @@ function promptUser() {
         }
     ]);
 }
-
+// Asks the user questions about a project.
 function promptProject(portfolioData) {
     if (!portfolioData.projects) {
         portfolioData.projects = [];

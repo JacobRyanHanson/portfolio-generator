@@ -1,3 +1,4 @@
+// Module that generates HTML and sub HTML elements (methods) based on the data it recieves.
 module.exports = function (templateData) {
     console.log(templateData);
     // Object destructure (... is the rest operator here).
@@ -37,7 +38,7 @@ module.exports = function (templateData) {
     </html>
     `;
 }
-
+// Generates an about section for the portfolio if anything was entered.
 function generateAbout(aboutText) {
     if (!aboutText) {
         return '';
@@ -50,7 +51,7 @@ function generateAbout(aboutText) {
     </section>
   `;
 }
-
+// Generates featured and non-featured projects adding them to the page accordingly.
 function generateProjects(projectsArr) {
     return `
         <section class="my-3" id="portfolio">

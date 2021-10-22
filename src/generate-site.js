@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+// Writes index.html to dist and retuns a promise on resolution.
 function writeFile(fileContent) {
     return new Promise(function (resolve, reject) {
         fs.writeFile("./dist/index.html", fileContent, function (error) {
@@ -14,7 +14,7 @@ function writeFile(fileContent) {
         });
     });
 }
-
+// Copies the style.css file to dist and returns a promise on resolution.
 function copyFile() {
     return new Promise(function (resolve, reject) {
         fs.copyFile("./src/style.css", "./dist/style.css", function (error) {
