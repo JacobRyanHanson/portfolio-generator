@@ -4,17 +4,20 @@
 //------------------------
 const inquirer = require("inquirer");
 
-const fs = require("fs");
+const {writeFile, copyFile} = require('./src/generate-site.js');
 const generatePage = require("./src/page-template.js");
 
 promptUser().then(promptProject).then(function (portfolioData) {
-    const pageHTML = generatePage(portfolioData);
-
-    fs.writeFile("./index.html", pageHTML, function (error) {
-        if (error) {
-            throw new Error(error);
-        }
-    });
+    return generatePage(portfolioData);
+}).then(function (pageHTML) {
+    return writeFile(pageHTML);
+}).then(function (writeFileResponse) {
+    console.log(writeFileResponse);
+    return copyFile();
+}).then(function (copyFileResponse) {
+    console.log(copyFileResponse);
+}).catch(function (error) {
+    console.log(error);
 });
 
 function promptUser() {
