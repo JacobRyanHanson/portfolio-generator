@@ -4,8 +4,8 @@ This is an application that geneterates and html page to discribe the author and
 
 ## Instructions
  1. After cloning repository make sure node.js is installed.
- 2. Run the command "npm init" to initalize the node package manager enviornment.
- 3. Run the command "npm install" to install appropriate dependcies.
+ 2. Run the command "npm init" in the root project directory to initalize the node package manager enviornment.
+ 3. Run the command "npm install" in the toot project directory to install appropriate dependcies.
  4. The application is now ready to run.
 
 ## Screenshot
